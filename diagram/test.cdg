@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="test">
+  <ClassDiagramComponents>
+    <Class name="person" package="" visibility="public" isAbstract="true" xPosition="5.0" yPosition="15.0">
+      <Fields>
+        <Field name="id" type="int" visibility="protected"/>
+        <Field name="fname" type="String" visibility="protected"/>
+        <Field name="age" type="int" visibility="protected"/>
+        <Field name="lname" type="String" visibility="protected"/>
+        <Field name="FManger" type="binfile" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="tostring" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="set_id" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="get_id" returnType="int" visibility="public"/>
+        <Method name="set_fname" returnType="void" visibility="public">
+          <Argument type="String" name="fname"/>
+        </Method>
+        <Method name="get_fname" returnType="String" visibility="public"/>
+        <Method name="set_age" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="get_age" returnType="int" visibility="public"/>
+        <Method name="set_lname" returnType="void" visibility="public">
+          <Argument type="String" name="lname"/>
+        </Method>
+        <Method name="get_lname" returnType="String" visibility="public"/>
+        <Method name="person" returnType="person" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="client" package="" visibility="public" xPosition="1018.0" yPosition="15.0">
+      <Fields>
+        <Field name="t" type="timeslot" visibility="public"/>
+        <Field name="drug" type="String" visibility="public"/>
+        <Field name="evnumber" type="double" visibility="private"/>
+        <Field name="payment_type" type="String" visibility="private"/>
+        <Field name="day" type="String" visibility="public"/>
+        <Field name="hour" type="int" visibility="public"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="nvisa" type="long" visibility="private"/>
+        <Field name="clients" type="ArrayList&lt;client&gt;" visibility="private" isStatic="true"/>
+        <Field name="clientFileName" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="make_app" returnType="String" visibility="public"/>
+        <Method name="client" returnType="client" visibility="public"/>
+        <Method name="set_email" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="get_email" returnType="String" visibility="public"/>
+        <Method name="set_evnumber" returnType="void" visibility="public">
+          <Argument type="double" name="evnumber"/>
+        </Method>
+        <Method name="get_evnumber" returnType="double" visibility="public"/>
+        <Method name="set_nvisa" returnType="void" visibility="public">
+          <Argument type="long" name="nvisa"/>
+        </Method>
+        <Method name="get_nvisa" returnType="long" visibility="public"/>
+        <Method name="delete_app" returnType="void" visibility="public">
+          <Argument type="String" name="day"/>
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="search_time" returnType="void" visibility="public"/>
+        <Method name="loadFromFile" returnType="void" visibility="public"/>
+        <Method name="commitToFile" returnType="boolean" visibility="public"/>
+        <Method name="searchclienttById" returnType="client" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getclientnum" returnType="int" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="staff" package="" visibility="public" isAbstract="true" xPosition="5.0" yPosition="673.0">
+      <Fields>
+        <Field name="salary" type="double" visibility="protected"/>
+        <Field name="email" type="String" visibility="protected"/>
+        <Field name="pass" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="set_salary" returnType="void" visibility="public">
+          <Argument type="double" name="salary"/>
+        </Method>
+        <Method name="get_salary" returnType="double" visibility="public"/>
+        <Method name="login" returnType="boolean" visibility="public" isAbstract="true">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="staff" returnType="staff" visibility="public">
+          <Argument type="double" name="salary"/>
+        </Method>
+        <Method name="staff" returnType="staff" visibility="public"/>
+        <Method name="set_email" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="set_pass" returnType="void" visibility="public">
+          <Argument type="String" name="pass"/>
+        </Method>
+        <Method name="get_email" returnType="String" visibility="public"/>
+        <Method name="get_pass" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="admin" package="" visibility="public" xPosition="383.0" yPosition="848.0">
+      <Fields>
+        <Field name="pass" type="String" visibility="private"/>
+        <Field name="adminFileName" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="add_c" returnType="boolean" visibility="public">
+          <Argument type="client" name="c"/>
+        </Method>
+        <Method name="delete_c" returnType="boolean" visibility="public">
+          <Argument type="int" name="oldid"/>
+        </Method>
+        <Method name="list" returnType="void" visibility="public"/>
+        <Method name="update" returnType="client" visibility="public">
+          <Argument type="client" name="c"/>
+        </Method>
+        <Method name="admin" returnType="admin" visibility="public"/>
+        <Method name="list" returnType="ArrayList&lt;client&gt;" visibility="public">
+          <Argument type="client" name="c"/>
+        </Method>
+        <Method name="delete" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="update" returnType="boolean" visibility="public">
+          <Argument type="client" name="x"/>
+        </Method>
+        <Method name="add_supplier" returnType="boolean" visibility="public">
+          <Argument type="supplier" name="su"/>
+          <Argument type="vacc_center" name="v"/>
+        </Method>
+        <Method name="add_seller" returnType="boolean" visibility="public">
+          <Argument type="seller" name="se"/>
+          <Argument type="vacc_center" name="v"/>
+        </Method>
+        <Method name="add_admin" returnType="void" visibility="public">
+          <Argument type="admin" name="ad"/>
+          <Argument type="vacc_center" name="v"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="vacc_center" package="" visibility="public" xPosition="916.0" yPosition="788.0">
+      <Fields>
+        <Field name="vacc_name" type="String" visibility="private"/>
+        <Field name="c" type="client" visibility="private"/>
+        <Field name="ad" type="admin" visibility="private"/>
+        <Field name="se" type="seller" visibility="private"/>
+        <Field name="t" type="timeslot" visibility="private"/>
+        <Field name="piece_drugcost" type="double[]" visibility="private"/>
+        <Field name="su" type="supplier" visibility="private"/>
+        <Field name="stock_quantity" type="int[]" visibility="private"/>
+        <Field name="nclient" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="vacc_center" returnType="vacc_center" visibility="public"/>
+        <Method name="vacc_center" returnType="vacc_center" visibility="public">
+          <Argument type="String" name="vacc_name"/>
+          <Argument type="admin" name="ad"/>
+          <Argument type="seller" name="se"/>
+          <Argument type="timeslot" name="t"/>
+        </Method>
+        <Method name="showall" returnType="void" visibility="public"/>
+        <Method name="evaluation_avg" returnType="double" visibility="public"/>
+        <Method name="check_stock" returnType="String" visibility="public">
+          <Argument type="String" name="drug_name"/>
+        </Method>
+        <Method name="check_validdrug" returnType="boolean" visibility="public">
+          <Argument type="String" name="drug"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="seller" package="" visibility="public" xPosition="421.0" yPosition="573.0">
+      <Fields>
+        <Field name="sellerFileName" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="seller" returnType="seller" visibility="public"/>
+        <Method name="make_invoice" returnType="void" visibility="public">
+          <Argument type="vacc_center" name="v"/>
+          <Argument type="client" name="c"/>
+          <Argument type="invoice" name="in"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="binfile" package="" visibility="public" xPosition="121.0" yPosition="452.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="read" returnType="Object" visibility="public">
+          <Argument type="String" name="path"/>
+        </Method>
+        <Method name="write" returnType="boolean" visibility="public">
+          <Argument type="String" name="Path"/>
+          <Argument type="Object" name="data"/>
+        </Method>
+        <Method name="binfile" returnType="binfile" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="exceptionrule" package="" visibility="public" xPosition="1381.0" yPosition="836.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="checkPositive" returnType="void" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+        <Method name="checkEmail" returnType="String" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+        <Method name="checkPassLength" returnType="void" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+        <Method name="exceptionrule" returnType="exceptionrule" visibility="public"/>
+        <Method name="checkpayment" returnType="String" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+        <Method name="checkvisanumber" returnType="long" visibility="public"/>
+        <Method name="check_id" returnType="int" visibility="public">
+          <Argument type="client" name="c"/>
+        </Method>
+        <Method name="check_evnumber" returnType="double" visibility="public">
+          <Argument type="String" name="x"/>
+        </Method>
+        <Method name="check_d" returnType="String" visibility="public">
+          <Argument type="timeslot" name="t"/>
+          <Argument type="String" name="day"/>
+        </Method>
+        <Method name="check_h" returnType="int" visibility="public">
+          <Argument type="timeslot" name="t"/>
+          <Argument type="int" name="hour"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="timeslot" package="" visibility="public" xPosition="1369.0" yPosition="38.0">
+      <Fields>
+        <Field name="day" type="String[]" visibility="public" isFinal="true"/>
+        <Field name="hour" type="int[]" visibility="public" isFinal="true"/>
+        <Field name="orderedh" type="int[]" visibility="public" isFinal="true"/>
+        <Field name="orderedd" type="String[]" visibility="public" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="showtimet" returnType="void" visibility="public"/>
+        <Method name="check_validtime" returnType="boolean" visibility="public"/>
+        <Method name="timeslot" returnType="timeslot" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="invoice" package="" visibility="public" xPosition="544.0" yPosition="15.0">
+      <Fields>
+        <Field name="c" type="client" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="invoice" returnType="invoice" visibility="public">
+          <Argument type="client" name="c"/>
+        </Method>
+        <Method name="show_invoice" returnType="void" visibility="public">
+          <Argument type="vacc_center" name="v"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="supplier" package="" visibility="public" xPosition="245.0" yPosition="15.0">
+      <Fields>
+        <Field name="drugs_costs" type="double[]" visibility="private"/>
+        <Field name="supplierFileName" type="String" visibility="private" isFinal="true"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="show_drugsnames_costs" returnType="void" visibility="public"/>
+        <Method name="supplier" returnType="supplier" visibility="public"/>
+        <Method name="set_email" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="get_email" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="drugs" package="" visibility="public" xPosition="614.0" yPosition="321.0">
+      <Fields>
+        <Field name="drugs" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="aggg" source="vacc_center" target="invoice" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="aggg" source="timeslot" target="client" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="aggg" source="invoice" target="seller" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="asso" source="timeslot" target="vacc_center" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="asso" source="client" target="vacc_center" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="seller" target="staff"/>
+    <HasRelation name="asso" source="supplier" target="vacc_center" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="agg" source="seller" target="admin" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="assso" source="admin" target="vacc_center" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="admin" target="staff"/>
+    <HasRelation name="asso" source="client" target="admin" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="aggg" source="timeslot" target="exceptionrule" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="asso" source="client" target="invoice" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="client" target="person"/>
+    <HasRelation name="aggg" source="vacc_center" target="admin" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="imp" source="supplier" target="drugs" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="aggg" source="vacc_center" target="seller" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="agg" source="client" target="seller" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="assso" source="seller" target="vacc_center" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <UseRelation name="impt" source="vacc_center" target="drugs" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="supplier" target="person"/>
+    <HasRelation name="aggg" source="supplier" target="admin" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="staff" target="person"/>
+    <HasRelation name="assso" source="client" target="exceptionrule" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="comp" source="binfile" target="person" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
